@@ -10,5 +10,5 @@ import androidx.navigation.NavHostController
 
 @Composable
 fun Account(navController: NavHostController) {
-    Box(modifier = Modifier.background(Color.Blue).fillMaxSize())
+    Box(modifier = Modifier.background(Color.White).fillMaxSize())
 }
