@@ -62,4 +62,8 @@ dependencies {
     //to control system ui
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.17.0"
 
+    //nav graph
+    def nav_version = "2.4.2"
+    implementation "androidx.navigation:navigation-compose:$nav_version"
+
 }
