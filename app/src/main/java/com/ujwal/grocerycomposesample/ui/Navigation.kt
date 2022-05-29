@@ -10,12 +10,17 @@ import com.ujwal.grocerycomposesample.ui.screens.SplashScreen
 @Composable
 fun InitNavigation() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "splash", builder = {
-        composable("splash"){
+    NavHost(navController = navController, startDestination = ScreenNavHelper.Splash.route, builder = {
+        composable(ScreenNavHelper.Splash.route) {
             SplashScreen(navController = navController)
         }
-        composable("dashboard"){
+        composable(ScreenNavHelper.Dashboard.route) {
             Dashboard()
         }
     })
+}
+
+sealed class ScreenNavHelper(val route: String) {
+    object Splash : ScreenNavHelper("splash")
+    object Dashboard : ScreenNavHelper("dashboard")
 }

@@ -15,17 +15,19 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.ujwal.grocerycomposesample.R
+import com.ujwal.grocerycomposesample.ui.ScreenNavHelper
 import com.ujwal.grocerycomposesample.ui.theme.LightGreen
 import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen(navController : NavController) {
-    val systemUiController  = rememberSystemUiController()
+fun SplashScreen(navController: NavController) {
+    val systemUiController = rememberSystemUiController()
     systemUiController.setSystemBarsColor(color = LightGreen)
     LaunchedEffect(key1 = false, block = {
         delay(1000)
-        navController.navigate("dashboard"){
-            popUpTo("splash"){
+        navController.navigate(ScreenNavHelper.Dashboard.route) {
+            //clear back stack
+            popUpTo(ScreenNavHelper.Splash.route) {
                 inclusive = true
             }
         }
@@ -47,5 +49,5 @@ fun SplashScreen(navController : NavController) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun DefaultPreview() {
-        SplashScreen(rememberNavController())
+    SplashScreen(rememberNavController())
 }
