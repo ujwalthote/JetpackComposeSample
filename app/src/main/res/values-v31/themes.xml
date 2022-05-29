@@ -3,7 +3,5 @@
 
     <style name="Theme.GroceryComposeSample" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowSplashScreenAnimationDuration">0</item>
     </style>
 </resources>

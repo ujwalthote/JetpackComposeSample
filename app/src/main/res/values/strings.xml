@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GroceryComposeSample</string>
+    <string name="tab_title_shop">Shop</string>
+    <string name="tab_title_explore">Explore</string>
+    <string name="tab_title_cart">Cart</string>
+    <string name="tab_title_favorite">Favorite</string>
+    <string name="tab_title_account">Account</string>
 </resources>
