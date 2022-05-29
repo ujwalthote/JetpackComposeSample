@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.ujwal.grocerycomposesample.ui.theme.LightGreen
 import com.ujwal.grocerycomposesample.ui.theme.GroceryComposeSampleTheme
 
@@ -29,6 +30,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun SplashScreen() {
+    val systemUiController  = rememberSystemUiController()
+    systemUiController.setSystemBarsColor(color = LightGreen)
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = LightGreen
