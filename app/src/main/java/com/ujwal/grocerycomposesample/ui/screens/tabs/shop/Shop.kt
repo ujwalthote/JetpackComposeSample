@@ -76,6 +76,7 @@ fun Shop(navController: NavHostController, shopViewModel: ShopViewModel = viewMo
         HorizontalBanner()
 
         //product list
+
     }
 }
 

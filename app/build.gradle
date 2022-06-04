@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -20,7 +22,13 @@ android {
     }
 
     buildTypes {
+
+        debug {
+            buildConfigField "String", "SERVER_URL", "\"https://fakestoreapi.com\""
+        }
+
         release {
+            buildConfigField "String", "SERVER_URL", "\"https://fakestoreapi.com\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -72,5 +80,9 @@ dependencies {
     //nav graph
     def nav_version = "2.4.2"
     implementation "androidx.navigation:navigation-compose:$nav_version"
+
+    //dependency injection
+    implementation "com.google.dagger:hilt-android:2.38.1"
+    kapt "com.google.dagger:hilt-compiler:2.38.1"
 
 }
