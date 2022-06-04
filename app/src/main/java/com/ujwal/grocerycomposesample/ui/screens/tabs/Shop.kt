@@ -6,11 +6,17 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun Shop(navController: NavHostController) {
-    Box(modifier = Modifier
-        .background(Color.Magenta)
-        .fillMaxSize())
+
+}
+
+@Preview
+@Composable
+fun ShopPreview() {
+    Shop(navController = rememberNavController())
 }
