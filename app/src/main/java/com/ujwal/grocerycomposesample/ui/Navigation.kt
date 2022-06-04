@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.ujwal.grocerycomposesample.ui.screens.tabs.*
+import com.ujwal.grocerycomposesample.ui.screens.tabs.shop.Shop
 
 @Composable
 fun InitNavigation(navController : NavHostController) {

@@ -1,7 +1,6 @@
-package com.ujwal.grocerycomposesample.ui.screens.tabs
+package com.ujwal.grocerycomposesample.ui.screens.tabs.shop
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -9,7 +8,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.focus.FocusState
+import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.focus.onFocusEvent
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -19,12 +20,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.ujwal.grocerycomposesample.R
-import com.ujwal.grocerycomposesample.ui.screens.tabs.shop.ShopViewModel
+import com.ujwal.grocerycomposesample.ui.components.SearchBox
 import com.ujwal.grocerycomposesample.ui.theme.Gray
 
 @Composable
 fun Shop(navController: NavHostController, shopViewModel: ShopViewModel = viewModel()) {
     val location by shopViewModel.location.observeAsState()
+    val searchTerm by shopViewModel.searchTerm.observeAsState()
     Column(modifier = Modifier.fillMaxSize()) {
         Spacer(modifier = Modifier.height(12.dp))
         Image(
@@ -37,7 +39,8 @@ fun Shop(navController: NavHostController, shopViewModel: ShopViewModel = viewMo
         Spacer(modifier = Modifier.height(4.dp))
         Row(
             modifier = Modifier
-                .align(Alignment.CenterHorizontally),
+                .align(Alignment.CenterHorizontally)
+                .padding(horizontal = 20.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
@@ -54,7 +57,16 @@ fun Shop(navController: NavHostController, shopViewModel: ShopViewModel = viewMo
             )
         }
         Spacer(modifier = Modifier.height(12.dp))
-
+        SearchBox(
+            onTextChanged = {
+                shopViewModel.onSearchTermChanged(it)
+            },
+            searchText = searchTerm ?: "",
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp)
+                .padding(horizontal = 20.dp)
+        )
     }
 }
 
