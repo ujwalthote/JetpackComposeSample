@@ -5,4 +5,5 @@
     <string name="tab_title_cart">Cart</string>
     <string name="tab_title_favorite">Favorite</string>
     <string name="tab_title_account">Account</string>
+    <string name="label_select_location">Select location</string>
 </resources>
