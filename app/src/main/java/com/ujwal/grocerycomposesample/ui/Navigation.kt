@@ -4,7 +4,10 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.ujwal.grocerycomposesample.ui.screens.tabs.*
+import com.ujwal.grocerycomposesample.ui.screens.tabs.Account
+import com.ujwal.grocerycomposesample.ui.screens.tabs.Cart
+import com.ujwal.grocerycomposesample.ui.screens.tabs.Explore
+import com.ujwal.grocerycomposesample.ui.screens.tabs.Favorite
 import com.ujwal.grocerycomposesample.ui.screens.tabs.shop.Shop
 
 @Composable
