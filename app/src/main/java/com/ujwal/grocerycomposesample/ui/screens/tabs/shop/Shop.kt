@@ -20,6 +20,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.ujwal.grocerycomposesample.R
+import com.ujwal.grocerycomposesample.ui.components.HorizontalBanner
 import com.ujwal.grocerycomposesample.ui.components.SearchBox
 import com.ujwal.grocerycomposesample.ui.theme.Gray
 
@@ -28,6 +29,7 @@ fun Shop(navController: NavHostController, shopViewModel: ShopViewModel = viewMo
     val location by shopViewModel.location.observeAsState()
     val searchTerm by shopViewModel.searchTerm.observeAsState()
     Column(modifier = Modifier.fillMaxSize()) {
+        //top icon
         Spacer(modifier = Modifier.height(12.dp))
         Image(
             painter = painterResource(id = R.drawable.ic_carrot),
@@ -37,6 +39,8 @@ fun Shop(navController: NavHostController, shopViewModel: ShopViewModel = viewMo
                 .align(alignment = Alignment.CenterHorizontally),
         )
         Spacer(modifier = Modifier.height(4.dp))
+
+        //location
         Row(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
@@ -57,6 +61,8 @@ fun Shop(navController: NavHostController, shopViewModel: ShopViewModel = viewMo
             )
         }
         Spacer(modifier = Modifier.height(12.dp))
+
+        //search box
         SearchBox(
             onTextChanged = {
                 shopViewModel.onSearchTermChanged(it)
@@ -67,6 +73,10 @@ fun Shop(navController: NavHostController, shopViewModel: ShopViewModel = viewMo
                 .height(50.dp)
                 .padding(horizontal = 20.dp)
         )
+
+        //banner
+        Spacer(modifier = Modifier.height(20.dp))
+        HorizontalBanner()
     }
 }
 
