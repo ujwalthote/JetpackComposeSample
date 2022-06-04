@@ -77,6 +77,8 @@ fun Shop(navController: NavHostController, shopViewModel: ShopViewModel = viewMo
         //banner
         Spacer(modifier = Modifier.height(20.dp))
         HorizontalBanner()
+
+        //product list
     }
 }
 
