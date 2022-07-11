@@ -7,4 +7,9 @@
     <string name="tab_title_account">Account</string>
     <string name="label_select_location">Select location</string>
     <string name="label_search_product">Search Product</string>
+    <string name="carrot_content_desc">Carrot icon in the top</string>
+    <string name="content_desc_location_icon">Location icon</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="content_not_found">Content not found</string>
+    <string name="content_desc_product_image">Product image</string>
 </resources>
