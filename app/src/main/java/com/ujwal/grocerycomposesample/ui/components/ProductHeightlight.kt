@@ -24,7 +24,7 @@ import com.ujwal.grocerycomposesample.ui.theme.Black
 fun ProductHeightlight(productCategory: CategoryProducts) {
     Column(
         modifier = Modifier
-            .padding(top = 20.dp)
+            .padding(top = 12.dp)
             .padding(horizontal = 20.dp)
     ) {
         Text(
