@@ -23,14 +23,12 @@ fun ProductItem(product: Product) {
             .height(248.dp)
             .padding(end = 15.dp)
             .border(1.dp, GrayBorder, RoundedCornerShape(20.dp))
-            .padding(15.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+            .padding(15.dp)
     ) {
         AsyncImage(
             model = product.image,
             contentDescription = stringResource(R.string.content_desc_product_image),
-            modifier = Modifier.height(124.dp),
-            alignment = Alignment.Center,
+            modifier = Modifier.height(124.dp).fillMaxWidth(),
         )
         Text(
             text = product.title ?: "",
